@@ -24,3 +24,24 @@ def moments_input(request):
         request,
         os.path.join(PROJECT_ROOT, 'app/templates', 'moments_input.html'),
         {'form': form})
+
+def current_datetime(request):
+	now = datetime.datatime.now().strftime("%Y-%m-%d %H: %M: %S")
+	return HttpResponse(now)
+
+def detail(request, moment_id):
+	m = Moment.object.get(id=moment_id)
+	return render(request, 'templates/moment.html', {'headline': m.headline, 'user': m.user_name})
+
+def my_view(request):
+#	return HttpResponseNotFound()
+	return HttpResponse(status=404)
+
+def view_moment(request):
+	data = {'content': 'Please input the content', 'user_name': '匿名', 'kind':'Python技术'}
+	f = MomentForm(request.POST, initial = data)
+	if f.has_changed():
+		print("如下字段进行了修改: ")
+		for field in f.changed_data:
+			print(field)
+

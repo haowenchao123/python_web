@@ -3,12 +3,12 @@ import tornado.web
 
 class MainHandle(tornado.web.RequestHandler):
 	def get(self):
-		self.write("Hello World")
+		self.write("Hello Tornado")
 
 def make_app():
 		return tornado.web.Application([
 			(r"/", MainHandle)
-			])
+			], autoreload = True)
 
 def main():
 		app = make_app()

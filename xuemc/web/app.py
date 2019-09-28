@@ -11,7 +11,7 @@ api = Api(app)
 app.debug = True
 
 app.config[
-    'SQLALCHEMY_DATABASE_URI'] = 'postgresql://xuemc:aaa123@localhost/xuemc_db'
+    'SQLALCHEMY_DATABASE_URI'] = 'postgresql://xuemc:xuemc@localhost/xuemc_db'
 app.config['WTF_CSRF_ENABLED'] = True
 app.config['SECRET_KEY'] = 'you-will-never-..guess'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

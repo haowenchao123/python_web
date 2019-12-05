@@ -11,13 +11,13 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
+ALLOWED_HOSTS = ['*']
 # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-DATABASE_ENGINE = 'sqlite3'
+DATABASE_ENGINE = 'postgresql3'
 # Or path to database file if using sqlite3.
-DATABASE_NAME = '%s/db/tmitter.sqlite' % WEB_PATH
-DATABASE_USER = ''  # Not used with sqlite3.
-DATABASE_PASSWORD = ''  # Not used with sqlite3.
+DATABASE_NAME = 'tmitter' #% WEB_PATH
+DATABASE_USER = 'postgres'  # Not used with sqlite3.
+DATABASE_PASSWORD = 'postgres'  # Not used with sqlite3.
 DATABASE_HOST = ''  # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''  # Set to empty string for default. Not used with sqlite3.
 
@@ -172,12 +172,12 @@ DATABASES = {
         # 'django.db.backends.',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'django.db.backends.postgresql_psycopg2',
         'NAME': 'tmitter',  # Or path to database file if using sqlite3.
-        'USER': 'tmitter',  # Not used with sqlite3.
-        'PASSWORD': 'tmitter',  # Not used with sqlite3.
+        'USER': 'postgres',  # Not used with sqlite3.
+        'PASSWORD': 'postgres',  # Not used with sqlite3.
         'HOST':
         # Set to empty string for localhost. Not used with sqlite3.
         '127.0.0.1',
         'PORT':
-        '5432',  # Set to empty string for default. Not used with sqlite3.
+        '',  # Set to empty string for default. Not used with sqlite3.
     }
 }
